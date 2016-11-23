@@ -10,16 +10,14 @@
     <div class="container"> <!-- the entire page wrapper -->
       <header class="header"> <!-- header of the page -->
         <nav class="menu"> <!-- navigation -->
+          <a class="logo__link" href="index.html"><img class="logo__image" src="img/logo-sedona.png" width="138" height="70" alt="На главную"></a>
           <ul class="menu__list">
-            <li class="menu__item"><a href="#" class="menu__link">Информация</a></li>
-            <li class="menu__item"><a href="#" class="menu__link">Фото и видео</a></li>
-            <li class="menu__item"><a href="#" class="menu__link">Карта штата</a></li>
-            <li class="menu__item"><a class="menu__link_active">Гостиницы</a></li>
+            <li class="menu__item menu__item_left"><a href="#" class="menu__link">Информация</a></li>
+            <li class="menu__item menu__item_left"><a href="#" class="menu__link">Фото и видео</a></li>
+            <li class="menu__item menu__item_right"><a href="#" class="menu__link">Карта штата</a></li>
+            <li class="menu__item menu__item_right"><a class="menu__link_active">Гостиницы</a></li>
           </ul>
         </nav>
-        <div class="logo"> <!-- logo -->
-          <a class="logo__link" href="index.html"><img class="logo__image" src="img/logo-sedona.png" width="138" height="70" alt="На главную"></a>
-        </div>
       </header>
 
       <main class="inner-page"> <!-- main block of inner page-->
@@ -29,10 +27,10 @@
             <ul class="options__list">
               <li class="options__item">
                 <input class="options__checkbox" name="options-pool" id="options-pool" type="checkbox">
-                <label class="options__label" for="">Бассейн</label>
+                <label class="options__label" for="options-pool">Бассейн</label>
               </li>
               <li class="options__item">
-                <input class="options__checkbox" name="options-parking" id="options-pool" type="checkbox">
+                <input class="options__checkbox" name="options-parking" id="options-parking" type="checkbox">
                 <label class="options__label" for="options-parking">Парковка</label>
               </li>
               <li class="options__item">
@@ -46,16 +44,16 @@
           <h2 class="filters__title">Тип жилья:</h2>
             <ul class="lodging__list">
               <li class="lodging__item">
-                <input type="text" class="lodging__checkbox" type="checkbox">
-                <label for="" class="lodging__label">Гостиница</label>
+                <input class="lodging__checkbox" name="loging-hotel" id="loging-hotel" type="checkbox">
+                <label class="lodging__label" for="loging-hotel">Гостиница</label>
               </li>
               <li class="lodging__item">
-                <input type="text" class="lodging__checkbox" type="checkbox">
-                <label for="" class="lodging__label">Мотель</label>
+                <input class="lodging__checkbox" name="loging-motel" id="loging-motel" type="checkbox">
+                <label class="lodging__label" for="loging-motel" >Мотель</label>
               </li>
               <li class="lodging__item">
-                <input type="text" class="lodging__checkbox" type="checkbox">
-                <label for="" class="lodging__label">Апартаменты</label>
+                <input class="lodging__checkbox" name="loging-apartaments" id="loging-apartaments" type="checkbox">
+                <label class="lodging__label" for="loging-apartaments">Апартаменты</label>
               </li>
             </ul>
           </fieldset>
@@ -136,7 +134,7 @@
         </article>
       </main>
 
-      <footer class="footer"> <!-- footer -->
+      <footer class="footer__inner"> <!-- footer -->
         <div class="footer__hashtag">
           <h2 class="footer__hashtag-title">#visitsedona</h2>
         </div>

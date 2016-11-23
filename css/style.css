@@ -1,5 +1,595 @@
+/* {
+  outline: 1px solid red;
+}*/
+
 html {
   margin: 0;
   padding: 0;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: "PT Sans", "Tahoma", sans-serif;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container {
+  position: relative;
+  min-width: 768px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow:
+    0 0 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.menu {
+  position: relative;
+  font-size: 0;
+}
+
+.menu__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style: none;
+  clear: both;
+  background-color: #ffffff;
+}
+
+.menu__item {
+  display: inline-block;
+  width: 20%;
+  padding-top: 14px;
+  padding-bottom: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 26px;
+  vertical-align: top;
+}
+
+.menu__item_left {
+  text-align: left;
+  margin-right: 8%;
+}
+
+.menu__item_left:first-child {
+  margin-left: 6%;
+  margin-right: 0;
+}
+
+.menu__item_right {
+  text-align: right;
+}
+
+.menu__item_right:last-child {
+  margin-right: 6%;
+}
+
+.menu__link,
+.menu__link:visited {
+  color: #000000;
+}
+
+.menu__link:hover {
+  color: #81b3d2;
+}
+
+.menu__link:active {
+  color: #cacaca;
+}
+
+.menu .logo__link,
+.menu .logo__link_active {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  width: 138px;
+  height: 70px;
+  margin-left: -69px;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  background: transparent url(../img/logo-sedona.png) no-repeat 0 0;
+}
+
+.logo__image {
+  width: 138px;
+  height: 70px;
+}
+
+.main-content {
+  margin: 0;
+  padding: 0;
+}
+
+.promo {
+  margin-bottom: 56px;
+  height: 512px;
+  background-color: #e0eff6;
+  background-image:
+    url("../img/bg-pattern-bottom.png"),
+    url("../img/bg-promo-title.png"),
+    url("../img/bg-sedona-canyon.jpg");
+  background-position:
+    0 100%,
+    50% 48%,
+    50% 101%;
+  background-repeat: no-repeat;
+  background-size:
+    100%,
+    auto,
+    100%;
+}
+
+.reasons {
+  background-color: #ffffff;
+}
+
+.reasons__row {
+  width: 100%;
+  background-color: #81b3d2;
+}
+
+.reasons__row_gray {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #eeeeee;
+  font-size: 0;
+  vertical-align: top;
+}
+
+.reasons__title {
+  margin: 0 auto;
+  margin-bottom: 31px;
+  width: 550px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+}
+
+.reasons__description {
+  margin: 0 auto;
+  margin-bottom: 52px;
+  width: 550px;
+  text-align: center;
+}
+
+.reason {
+  height: 256px;
+  font-size: 0;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.reason__1 {
+  width: 33.3334%;
+  height: 256px;
+  float: left;
+  font-size: 14px;
+  background-color: #81b3d2;
+}
+
+.reason__2 {
+  width: 33.3334%;
+  height: 256px;
+  float: right;
+  font-size: 14px;
+  background-color: #81b3d2;
+}
+
+.reason__3,
+.reason__4,
+.reason__5 {
+  display: inline-block;
+  width: 33.3334%;
+  height: 256px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.reason__title,
+.reason__number,
+.reason__text {
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
+}
+
+.reason__title {
+  margin-top: 47px;
+  width: 153px;
+  font-size: 21px;
+  line-height: 21px;
+  margin-bottom: 24px;
+}
+
+.reason__number {
+  margin-bottom: 21px;
+}
+
+.reason__number::before {
+  content: "— ";
+}
+
+.reason__number::after {
+  content: " —";
+}
+
+.reason__1 .reason__text {
+  width: 75%;
+}
+
+.reason__image_1 {
+  float: right;
+  width: 66.6667%;
+  height: 256px;
+  background: #81b3d2 url("../img/reason-image1.jpg") no-repeat 100% 54%;
+  background-size: 100%;
+}
+
+.reason__image_2 {
+  float: left;
+  width: 66.6667%;
+  height: 256px;
+  background: #81b3d2 url("../img/reason-image2.jpg") no-repeat 100% 53%;
+  background-size: 100%;
+}
+
+.reason__icon .reason__title,
+.reason__icon .reason__number,
+.reason__icon .reason__text,
+.reasons__row_gray .reason__title,
+.reasons__row_gray .reason__number,
+.reasons__row_gray .reason__text {
+  color: #000000;
+}
+
+.reason__icon {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style: none;
+  clear: both;
+  background-color: #ffffff;
+}
+
+.reason__icon_home,
+.reason__icon_food,
+.reason__icon_gifts {
+  display: inline-block;
+  position: relative;
+  padding-top: 114px;
+  width: 33.3333%;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.reason__icon_home::before,
+.reason__icon_food::before,
+.reason__icon_gifts::before {
+  position: absolute;
+  content: "";
+  height: 76px;
+  width: 76px;
+  background-image: url("../img/spriteset.png");
+  background-repeat: no-repeat;
+}
+
+.reason__icon_home::before {
+  top: 60px;
+  left: 50%;
+  margin-left: -38px;
+  background-position: -20px -177px;
+}
+
+.reason__icon_food::before {
+  top: 61px;
+  left: 50%;
+  margin-left: -38px;
+  background-position: -20px -269px;
+}
+
+.reason__icon_gifts::before {
+  top: 57px;
+  left: 50%;
+  margin-left: -33px;
+  background-position: -20px -359px;
+}
+
+.reason__icon_home .reason__text {
+  width: 65%;
+}
+
+.reason__icon_food .reason__text {
+  width: 60%;
+}
+
+.reason__icon_gifts .reason__text {
+  width: 73%;
+}
+
+.reason__icon .reason__text {
+  margin-bottom: 61px;
+}
+
+.reason__2 .reason__title {
+  margin-top: 47px;
+}
+
+.reason__2 .reason__text {
+  width: 75%;
+}
+
+.reasons__row_gray .reason__title {
+  margin-top: 47px;
+}
+
+.search {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.search__title {
+  margin-top: 56px;
+  font-size: 30px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
+.search__description {
+  margin: auto;
+  width: 440px;
+  line-height: 24px;
+  margin-bottom: 47px;
+}
+
+.btn {
+
+}
+
+.js__form_open {
+  display: inline-block;
+  padding: 30px 0;
+  width: 568px;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 26px;
+  color: #ffffff;
+  background-color: #766357;
+  vertical-align: middle;
+}
+
+.js__form_open:hover {
+  background-color: #604e43;
+}
+
+.js__form_open:active {
+  background-color: #503e33;
+  color: #857871;
+}
+
+.map__canvas {
+  position: relative;
+  width: 100%;
+  height: 593px;
+  background: #e9e5dc url("../img/map-static.jpg") no-repeat 48% 101%;
+}
+
+.search-form {
+  display: none;
+}
+
+.footer__main {
+  position: absolute;
+    bottom: 0;
+  left: 0;
+  padding: 36px 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.footer__hashtag,
+.footer__social,
+.footer__copyright {
+  float: left;
+  width: 33.3333%;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+}
+
+.footer__hashtag {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.footer__social {
+  font-size: 0;
+  line-height: 48px;
+}
+
+.btn__social_tw,
+.btn__social_fb,
+.btn__social_yt {
+  display: inline-block;
+  margin: 0 3px;
+  width: 46px;
+  height: 48px;
+  background-color: #81b3d2;
+  background-image: url(../img/spriteset.png);
+  background-repeat: no-repeat;
+}
+
+.btn__social_tw:hover,
+.btn__social_fb:hover,
+.btn__social_yt:hover {
+  background-color: #669ec0;
+}
+
+.btn__social_tw {
+  margin-left: 0;
+  background-position: -45px -558px;
+}
+
+.btn__social_tw:active {
+  background-color: #5496bd;
+  background-position: -4px -563px;
+}
+
+.btn__social_fb {
+  background-position: -83px -484px;
+}
+
+.btn__social_fb:active {
+  background-color: #5496bd;
+  background-position: -83px -564px;
+}
+
+.btn__social_yt {
+  background-position: -47px -523px;
+}
+
+.btn__social_yt:active {
+  background-position: -87px -523px;
+}
+
+.footer__copyright {
+  font-size: 14px;
+  line-height: 48px;
+}
+
+.footer__copyright_image {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 113px;
+  height: 39px;
+  font-size: 0;
+  margin-left: 4px;
+  background: url("../img/spriteset.png") no-repeat -20px 0;
+}
+
+.footer__copyright_image:hover {
+  background-position: -20px -59px;
+}
+
+.footer__copyright_image:active {
+  background-position: -20px -118px;
+}
+
+/* here will be media queries for semi-responsive */
+
+@media all and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+
+  .promo {
+  margin-bottom: 60px;
+  height: 508px;
+  background-position:
+    bottom center,
+    50% 49%,
+    50% 21%;
+  background-repeat: no-repeat;
+  background-size:
+    100%,
+    auto,
+    cover;
+  }
+
+  .reasons__title {
+    margin-bottom: 30px;
+  }
+
+  .reasons__title {
+  margin: 0 auto;
+  margin-bottom: 31px;
+  width: 550px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+}
+
+  .reason__title {
+    margin-top: 54px;
+  }
+
+  .reason__icon .reason__text {
+    margin-bottom: 82px;
+}
+
+  .reason__icon_home::before {
+    margin-left: -37px;
+  }
+
+  .reason__icon_food::before {
+    top: 60px;
+    left: 50%;
+    margin-left: -36px;
+    background-position: -20px -269px;
+  }
+
+  .reason__icon_gifts::before {
+    top: 56px;
+    left: 50%;
+    margin-left: -31px;
+    background-position: -20px -359px;
+}
+
+  .reason__icon_home,
+  .reason__icon_food,
+  .reason__icon_gifts {
+    padding-top: 107px;
+  }
+
+  .reason__icon_home .reason__text,
+  .reason__icon_food .reason__text,
+  .reason__icon_gifts .reason__text {
+    width: 75%;
+  }
+
+  .reason__2 .reason__title {
+    margin-top: 55px;
+  }
+
+  .reason__2 .reason__text {
+    width: 85%;
+  }
+
+  .map__canvas {
+  position: relative;
+  width: 100%;
+  height: 593px;
+  background: #e9e5dc url("../img/map-static.jpg") no-repeat 50% 100%;
+  }
+}
