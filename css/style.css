@@ -33,8 +33,7 @@ a {
   min-width: 768px;
   margin: 0 auto;
   background-color: #ffffff;
-  box-shadow:
-    0 0 15px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .clearfix {
@@ -62,7 +61,7 @@ a {
   display: inline-block;
   width: 20%;
   padding-top: 14px;
-  padding-bottom: 16px;
+  padding-bottom: 17px;
   font-size: 14px;
   font-weight: bold;
   line-height: 26px;
@@ -174,7 +173,7 @@ a {
 
 .reasons__description {
   margin: 0 auto;
-  margin-bottom: 52px;
+  margin-bottom: 51px;
   width: 550px;
   text-align: center;
 }
@@ -226,7 +225,7 @@ a {
   width: 153px;
   font-size: 21px;
   line-height: 21px;
-  margin-bottom: 24px;
+  margin-bottom: 23px;
 }
 
 .reason__number {
@@ -348,11 +347,21 @@ a {
   width: 75%;
 }
 
+.reason__4 .reason__text,
+.reason__5 .reason__text {
+  width: 60%;
+}
+
+.reason__3 .reason__text {
+  width: 65%;
+}
+
 .reasons__row_gray .reason__title {
   margin-top: 47px;
 }
 
 .search {
+  position: relative;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -369,7 +378,7 @@ a {
   margin: auto;
   width: 440px;
   line-height: 24px;
-  margin-bottom: 47px;
+  margin-bottom: 48px;
 }
 
 .btn {
@@ -405,12 +414,189 @@ a {
 }
 
 .search-form {
+  position: absolute;
+  top: 235px;
+  width: 568px;
+  height: 395px;
+  left: 50%;
+  margin-left: -284px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  display: block;
+  font-weight: 700;
+  font-size: 0;
+  box-shadow: 0 7px 15px 0 rgba(0,0,0,.15);
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+  animation: slideInDown 0.25s;
+}
+
+.form-hide {
   display: none;
+}
+
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -25%, 0);
+    transform: translate3d(0, -25%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -25%, 0);
+    transform: translate3d(0, -25%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.search-form__label {
+  display: inline-block;
+  width: 114px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 38px;
+  text-align: left;
+}
+
+.search-form__label_right {
+  display: inline-block;
+  padding-left: 23px;
+  width: 114px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 38px;
+  text-align: center;
+}
+
+.search-form_full:first-child {
+  margin-top: 55px;
+}
+
+.search-form_full {
+  display: inline-block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 29px;
+  width: 460px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 0;
+}
+
+.search-form__date {
+  display: inline-block;
+  padding: 10px;
+  width: 346px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: inherit;
+  text-transform: inherit;
+  background: #f2f2f2 url("../img/spriteset.png") no-repeat 295px -490px;
+
+  outline: 0;
+  border: none;
+}
+
+.search-form__date:hover,
+.number__field:hover,
+.number__btn_plus:hover,
+.number__btn_minus:hover {
+  background-color: #ebebeb;
+}
+
+.search-form__date:hover {
+  background-position: 295px -599px;
+}
+
+.search-form__date:focus,
+.number__field:focus {
+  background-color: #ffffff;
+  outline: 2px solid #e5e5e5;
+}
+
+.search-form__date:focus {
+  background-position: 295px -531px;
+}
+
+.search-form_half {
+  display: inline-block;
+  margin-bottom: 57px;
+  width: 230px;
+  font-size: 0;
+  vertical-align: bottom;
+}
+
+.number__field {
+  display: inline-block;
+  padding: 10px;
+  width: 38px;
+  height: 38px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: inherit;
+  text-transform: inherit;
+  background-color: #f2f2f2;
+  outline: 0;
+  border: none;
+  text-align: center;
+}
+
+.number__btn_minus,
+.number__btn_plus {
+  display: inline-block;
+  padding: 10px;
+  width: 38px;
+  height: 38px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  font-size: 21px;
+  outline: 0;
+  vertical-align: bottom;
+}
+
+.search-form__btn_submit {
+  display: inline-block;
+  padding: 0;
+  width: 460px;
+  height: 58px;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 26px;
+  color: #ffffff;
+  background-color: #81b3d2;
+  vertical-align: middle;
+  text-transform: uppercase;
+  border: none;
+  outline: 0;
+}
+
+.search-form__btn_submit:hover {
+  background-color: #669ec0;
+}
+
+.search-form__btn_submit:active {
+  color: #88b6d1;
+  background-color: #5496bd;
 }
 
 .footer__main {
   position: absolute;
-    bottom: 0;
+  bottom: 0;
   left: 0;
   padding: 36px 0;
   width: 100%;
@@ -505,7 +691,7 @@ a {
   background-position: -20px -118px;
 }
 
-/* here will be media queries for semi-responsive */
+/* here will be media queries for semi-responsive behaviour */
 
 @media all and (min-width: 1200px) {
   .container {
@@ -513,7 +699,7 @@ a {
   }
 
   .promo {
-  margin-bottom: 60px;
+  margin-bottom: 59px;
   height: 508px;
   background-position:
     bottom center,
@@ -527,21 +713,19 @@ a {
   }
 
   .reasons__title {
-    margin-bottom: 30px;
+    margin-bottom: 31px;
   }
-
-  .reasons__title {
-  margin: 0 auto;
-  margin-bottom: 31px;
-  width: 550px;
-  font-size: 21px;
-  font-weight: 700;
-  line-height: 26px;
-  text-align: center;
-}
 
   .reason__title {
     margin-top: 54px;
+    margin-bottom: 24px;
+  }
+
+  .reasons__description {
+    margin: 0 auto;
+    margin-bottom: 52px;
+    width: 550px;
+    text-align: center;
   }
 
   .reason__icon .reason__text {
@@ -586,10 +770,24 @@ a {
     width: 85%;
   }
 
+  .reason__3 .reason__text,
+  .reason__4 .reason__text,
+  .reason__5 .reason__text {
+    width: 70%;
+  }
+
   .map__canvas {
   position: relative;
   width: 100%;
   height: 593px;
   background: #e9e5dc url("../img/map-static.jpg") no-repeat 50% 100%;
+  }
+
+  .search-form_half {
+    margin-bottom: 56px;
+  }
+
+  .search__description {
+    margin-bottom: 47px;
   }
 }
