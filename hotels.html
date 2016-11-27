@@ -21,12 +21,12 @@
       </header>
 
       <main class="inner-page"> <!-- main block of inner page-->
-        <form class="filters" href="#" type="get"> <!--- filters block -->
+        <form class="filters" action="#" method="get"> <!--- filters block -->
           <fieldset class="options"> <!-- infrastructure filters -->
           <h2 class="filters__title">Инфраструктура:</h2>
             <ul class="options__list">
               <li class="options__item">
-                <input class="options__checkbox" name="options-pool" id="options-pool" type="checkbox">
+                <input class="options__checkbox" name="options-pool" id="options-pool" type="checkbox" checked disabled>
                 <label class="options__label" for="options-pool">Бассейн</label>
               </li>
               <li class="options__item">
@@ -35,7 +35,7 @@
               </li>
               <li class="options__item">
                 <input class="options__checkbox" name="options-wifi" id="options-wifi" type="checkbox">
-                <label class="filters__label" for="options-wifi">Wi-Fi</label>
+                <label class="options__label" for="options-wifi">Wi-Fi</label>
               </li>
             </ul>
           </fieldset>
@@ -44,15 +44,15 @@
           <h2 class="filters__title">Тип жилья:</h2>
             <ul class="lodging__list">
               <li class="lodging__item">
-                <input class="lodging__checkbox" name="loging-hotel" id="loging-hotel" type="checkbox">
+                <input class="lodging__checkbox" name="loging-hotel" id="loging-hotel" type="checkbox" checked>
                 <label class="lodging__label" for="loging-hotel">Гостиница</label>
               </li>
               <li class="lodging__item">
-                <input class="lodging__checkbox" name="loging-motel" id="loging-motel" type="checkbox">
+                <input class="lodging__checkbox" name="loging-motel" id="loging-motel" type="checkbox" checked>
                 <label class="lodging__label" for="loging-motel" >Мотель</label>
               </li>
               <li class="lodging__item">
-                <input class="lodging__checkbox" name="loging-apartaments" id="loging-apartaments" type="checkbox">
+                <input class="lodging__checkbox" name="loging-apartaments" id="loging-apartaments" type="checkbox" checked>
                 <label class="lodging__label" for="loging-apartaments">Апартаменты</label>
               </li>
             </ul>
@@ -60,91 +60,99 @@
 
           <fieldset class="price"> <!-- price range filters -->
             <h2 class="filters__title">
-              <label for="price-from">Стоимость в сутки (р):<label>
+              <label for="price-from">Стоимость в сутки (р):</label>
             </h2>
             <div class="price__input">
-              От <input class="price__input_from" type="text" name="price" id="price-from" placeholder="0">
-              До <input class="price__input_to" type="text" placeholder="3000">
+              <label class="min-price">От <input class="price__input_from" type="text" name="price" id="price-from" value="0"></label>
+              <label class="max-price">До <input class="price__input_to" type="text" value="3000"></label>
             </div>
             <div class="price__range-controls"> <!-- price range controls -->
             <div class="scale">
               <div class="bar"></div>
             </div>
-            <div class="price__toggle min-toggle"></div>
-            <div class="price__toggle max-toggle"></div>
+            <div class="price__toggle price__toggle_min"></div>
+            <div class="price__toggle price__toggle_max"></div>
           </div>
-            <button class="filters__btn_show" type="submit"></button> <!-- that button is one of a kind, so it will not inherit typical class .btn -->
+            <button class="filters__btn_show" type="submit">Показать</button> <!-- that button is one of a kind, so it will not inherit typical class .btn -->
           </fieldset>
         </form>
+
         <article class="results"> <!-- additional sort filters -->
           <div class="results__filters">
-            <p class="results__number-shown">Найдено: 3</p>
-            <ul class="results__sort">Сортировка:
-              <li class="results__sort-price"><a class="results__link_active">По цене</a></li>
-              <li class="results__sort-type"><a class="results__link" href="#">По типу</a></li>
-              <li class="results__sort-rating"><a class="results__link" href="#">По рейтингу</a></li>
+            <p class="results__number_shown">Найдено: 3</p>
+            <ul class="results__sort">
+              <li class="results__sort_title">Сортировка:</li>
+              <li class="results__sort_price"><a class="results__link_active">По цене</a></li>
+              <li class="results__sort_type"><a class="results__link" href="#">По типу</a></li>
+              <li class="results__sort_rating"><a class="results__link" href="#">По рейтингу</a></li>
             </ul>
-            <a class="results__link_active" title="По возрастанию"><div class="toggle-increase">По возрастанию</div></a>
-            <a class="results__link" href="#" title="По убыванию"><div class="toggle-decrease">По убыванию</div></a>
+            <div class="results__sort_toggle">
+            <a href="#" title="По возрастанию"><div class="toggle-increase">По возрастанию</div></a>
+            <a title="По убыванию"><div class="toggle-decrease">По убыванию</div></a>
+            </div>
           </div>
-          <section class="results results__item"> <!-- detailed search result -->
-            <a class="results__link" href="#"><img class="results__thumb" src="img/results-thumb-amara.jpg" width="135" height="90" alt="Amara Resort &amp; Spa"></a>
+          <section class="results__item"> <!-- detailed search result -->
+            <a class="thumbs" href="#"><img src="img/results-thumb-amara.jpg" width="135" height="90" alt="Amara Resort &amp; Spa"></a>
             <div class="results__item-details">
-              <h3>Amara Resort &amp; Spa</h3>
-              <p><span class="results__hotel-type">Гостиница</span> От 3500 р.</p>
+              <a class="results__thumb" href="#"><h3 class="results__title">Amara Resort &amp; Spa</h3></a>
+              <div class="hotel-type">
+                <p class="results__hotel-type">Гостиница</p>
+                <p class="results__price">От 3500 р.</p>
+              </div>
               <a class="btn results__btn-details">Подробнее</a>
               <a class="btn results__btn-book">Забронировать</a>
             </div>
             <div class="results__item-rating">
-              <p class="results__rating-stars">&starf;&starf;&starf;</p>
+              <p class="results__rating-stars">&starf; &starf; &starf; &starf;</p>
               <p class="results__rating-number">Рейтинг: 8,5</p>
             </div>
-           </div>
           </section>
 
-          <section class="results results__item">
-            <a class="results__link" href="#"><img class="results__thumb" src="img/results-thumb-desert.jpg" width="135" height="90" alt="Amara Resort &amp; Spa"></a>
+          <section class="results__item">
+            <a class="thumbs" href="#"><img src="img/results-thumb-desert.jpg" width="135" height="90" alt="Amara Resort &amp; Spa"></a>
             <div class="results__item-details">
-              <h3>Desert Quail Inn</h3>
-              <p><span class="results__hotel-type">Мотель</span> От 2000 р.</p>
-              <a class="btn results__btn-details">Подробнее</a>
-              <a class="btn results__btn-book">Забронировать</a>
+             <a class="results__thumb" href="#"><h3 class="results__title">Desert Quail Inn</h3></a>
+              <div class="hotel-type">
+                <p class="results__hotel-type">Мотель</p>
+                <p class="results__price"> От 2000 р.</p>
+              </div>
+                <a class="btn results__btn-details">Подробнее</a>
+                <a class="btn results__btn-book">Забронировать</a>
             </div>
             <div class="results__item-rating">
-              <p class="results__rating-stars">&starf;&starf;</p>
+              <p class="results__rating-stars">&starf; &starf;</p>
               <p class="results__rating-number">Рейтинг: 8,9</p>
             </div>
-           </div>
           </section>
 
-          <section class="results results__item">
-            <a class="results__link" href="#"><img class="results__thumb" src="img/results-thumb-villas.jpg" width="135" height="90" alt="Amara Resort &amp; Spa"></a>
+          <section class="results__item">
+            <a class="thumbs" href="#"><img src="img/results-thumb-villas.jpg" width="135" height="90" alt="Amara Resort &amp; Spa"></a>
             <div class="results__item-details">
-              <h3>Villas at Poco Diablo</h3>
-              <p><span class="results__hotel-type">Апартаменты</span> От 4000 р.</p>
+              <a class="results__thumb" href="#"><h3 class="results__title">Villas at Poco Diablo</h3></a>
+              <div class="hotel-type">
+                <p class="results__hotel-type">Апартаменты</p>
+                <p class="results__price">От 4000 р.</p>
+              </div>
               <a class="btn results__btn-details">Подробнее</a>
               <a class="btn results__btn-book">Забронировать</a>
             </div>
             <div class="results__item-rating">
-              <p class="results__rating-stars">&starf;&starf;&starf;</p>
+              <p class="results__rating-stars">&starf; &starf; &starf;</p>
               <p class="results__rating-number">Рейтинг: 9,2</p>
             </div>
-           </div>
           </section>
         </article>
       </main>
 
-      <footer class="footer__inner"> <!-- footer -->
-        <div class="footer__hashtag">
-          <h2 class="footer__hashtag-title">#visitsedona</h2>
-        </div>
+      <footer class="footer__inner clearfix"> <!-- footer -->
+        <div class="footer__hashtag">#visitsedona</div>
         <div class="footer__social">
           <a href="#" class="btn btn__social_tw">twitter</a>
           <a href="#" class="btn btn__social_fb">facebook</a>
           <a href="#" class="btn btn__social_yt">youtube</a>
         </div>
         <div class="footer__copyright">
-          website by <img class="footer__copyright_image" src="http://placehold.it/113x39" width="113" height="39" alt="HTML Academy">
+          website by <a class="footer__copyright_image" href="#">htmlacademy</a>
         </div>
       </footer>
     </div>
